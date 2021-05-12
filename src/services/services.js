@@ -40,7 +40,7 @@ export const redirectToPayU = (
       headers: {
         accept: 'application/json',
         'Content-Type': 'application/x-www-form-urlencoded',
-        // 'Access-Control-Allow-Origin':
+        'Access-Control-Allow-Origin': '*',
       },
     }
   );
