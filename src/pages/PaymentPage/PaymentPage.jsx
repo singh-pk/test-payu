@@ -101,7 +101,7 @@ const PaymentPage = ({
 
       let res2 = await redirectToPayU(
         res1.userId,
-        updatedPrice,
+        price,
         course,
         firstName,
         email,
