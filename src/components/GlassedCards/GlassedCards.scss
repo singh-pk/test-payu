@@ -1,0 +1,41 @@
+@import '../../main';
+
+.glassed-cards {
+  width: 289px;
+  padding: 1rem;
+  margin: 0.5rem;
+  border-radius: 16px;
+
+  & > div:first-of-type {
+    font-weight: 600;
+  }
+
+  & > div:last-of-type {
+    margin-top: 0.8rem;
+    font-size: 0.875rem;
+  }
+
+  &.purple {
+    background: linear-gradient(
+      126.87deg,
+      rgba(176, 203, 255, 0.6) 1.48%,
+      rgba(132, 0, 255, 0.6) 97.76%
+    );
+  }
+
+  &.green {
+    background: linear-gradient(126.15deg, #6fcf97 0%, #4664ff 100%);
+  }
+
+  &.yellow {
+    background: linear-gradient(
+      124.74deg,
+      rgba(255, 137, 128, 0.8) 2.07%,
+      rgba(255, 176, 0, 0.8) 100%
+    );
+  }
+
+  &.orange {
+    background: linear-gradient(126.19deg, #9a3b82 2.4%, #ffc500 102.3%);
+  }
+}

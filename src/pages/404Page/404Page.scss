@@ -1,0 +1,23 @@
+@import '../../main';
+
+.not-found-page {
+  height: calc(100vh - 5rem - 6rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  & > div:first-of-type {
+    @include headerStyle($subheading: true);
+    margin-top: 3rem;
+  }
+
+  & > div:last-of-type {
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 852px) {
+  .not-found-page {
+    height: calc(100vh - 5rem - 11.9225rem);
+  }
+}

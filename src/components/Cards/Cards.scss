@@ -1,0 +1,50 @@
+.cards {
+  width: 314px;
+  background-color: #181818;
+  margin: 0 1rem;
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.12);
+  border-radius: 15px;
+  padding: 1rem;
+  margin: 0.5rem 1rem;
+
+  & > div:first-of-type {
+    height: 142px;
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  & > div:last-of-type {
+    & > div:nth-of-type(2) {
+      & > span:first-of-type {
+        text-decoration: line-through;
+      }
+
+      & > span:nth-of-type(2) {
+        color: #66b0f0;
+        font-weight: 600;
+      }
+
+      & > span:last-of-type {
+        font-weight: 600;
+      }
+    }
+
+    & > div:last-of-type {
+      display: flex;
+      align-items: center;
+      margin-top: 0.5rem;
+
+      & > span {
+        margin: 0 auto;
+        color: #a383ff;
+        font-size: 0.9rem;
+        font-weight: 600;
+
+        &:hover {
+          cursor: pointer;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}

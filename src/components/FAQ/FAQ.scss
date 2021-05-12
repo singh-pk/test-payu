@@ -1,0 +1,15 @@
+@import '../../main';
+
+.faqs {
+  flex-direction: column;
+  align-items: center;
+  height: auto !important;
+
+  & > span {
+    @include headerStyle($subheading: true);
+  }
+
+  .accordion-container {
+    width: 100%;
+  }
+}

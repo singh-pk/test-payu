@@ -1,0 +1,118 @@
+@import '../../main';
+
+.homepage {
+  overflow: hidden;
+  padding: 0 4vw;
+
+  & > section {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    margin: 2rem 0;
+  }
+
+  .homepage-section-first {
+    height: calc(100vh - 5rem);
+
+    & > div {
+      width: calc(27.5vh + 27.5vw);
+      text-align: center;
+      margin-top: calc(5vh + 5vw);
+      margin-bottom: unset;
+
+      & > div:first-of-type {
+        @include headerStyle;
+      }
+
+      & > div:last-of-type {
+        color: #c9c9c9;
+
+        & > span {
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  .homepage-section-second {
+    flex-direction: column;
+    align-items: center;
+
+    & > span {
+      @include headerStyle($subheading: true);
+      margin: 1rem 0;
+    }
+
+    .card-container {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+  }
+
+  .homepage-section-third {
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    & > span {
+      @include headerStyle($subheading: true);
+      text-align: center;
+      margin: 1rem 0;
+    }
+
+    .glassed-card-container {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+
+      & > div {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1326px) {
+  .homepage {
+    .homepage-section-third {
+      .glassed-card-container {
+        display: unset;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 752px) {
+  .homepage {
+    & > section {
+      height: unset;
+    }
+
+    .homepage-section-first {
+      height: unset;
+      margin-bottom: calc(3vh + 3vw);
+    }
+  }
+}
+
+@media screen and (max-width: 645px) {
+  .homepage {
+    .homepage-section-third {
+      .glassed-card-container {
+        & > div {
+          & > div:nth-child(even) {
+            margin-left: auto;
+          }
+          & > div:nth-child(odd) {
+            margin-right: auto;
+          }
+        }
+      }
+    }
+  }
+}

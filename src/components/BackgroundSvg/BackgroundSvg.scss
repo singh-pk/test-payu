@@ -1,0 +1,51 @@
+.background-svg {
+  position: absolute;
+  height: 85%;
+  width: 100%;
+  z-index: -1;
+  overflow: hidden;
+
+  &.logo {
+    width: unset;
+    position: unset;
+    height: 2.7rem;
+    z-index: 3;
+  }
+
+  &.card-svg {
+    position: unset;
+    height: 100%;
+    z-index: 1;
+  }
+
+  &.icon-svg {
+    position: unset;
+    height: 1.2rem;
+    width: 1.2rem;
+    z-index: 1;
+  }
+}
+
+.background-svg-character {
+  bottom: 0;
+  height: unset;
+  width: unset;
+
+  &.background-svg-character-left {
+    left: 0;
+  }
+
+  &.background-svg-character-right {
+    right: 0;
+  }
+}
+
+@media screen and (max-width: 752px) {
+  .background-svg-character {
+    display: none;
+  }
+
+  .background-svg {
+    height: unset;
+  }
+}

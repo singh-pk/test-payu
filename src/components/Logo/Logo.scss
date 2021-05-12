@@ -1,0 +1,21 @@
+@import '../../main';
+
+.logo {
+  display: flex;
+  align-items: center;
+
+  & > div:last-of-type {
+    font-size: 1.625rem;
+    font-weight: 600;
+    font-family: 'Roboto Mono', monospace;
+    margin-left: 0.3rem;
+
+    & > span:last-of-type {
+      color: $secondaryColor;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}

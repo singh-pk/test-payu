@@ -1,0 +1,60 @@
+.form {
+  position: relative;
+  margin: 1rem 0;
+
+  @mixin shrinkLabel {
+    top: -1rem;
+    font-weight: 500;
+  }
+
+  .form-input-label {
+    position: absolute;
+    font-size: 0.8rem;
+    left: 0.7rem;
+    top: 0.5rem;
+    background-color: #131313;
+    padding: 0 0.3rem;
+    z-index: 50;
+    transition: all 200ms ease;
+    cursor: text;
+  }
+
+  .form-input {
+    height: 3.0625rem;
+    width: calc(16.375rem - 1rem);
+    padding: 0 1rem;
+    border-radius: 10px;
+    outline: none;
+    border: 1.5px solid #404040;
+    background-color: inherit;
+    color: inherit;
+    z-index: 40;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    &:focus {
+      border: 1.8px solid #f1f1f1;
+    }
+
+    &:focus ~ .form-input-label,
+    &[filled='true'] ~ .form-input-label {
+      @include shrinkLabel;
+    }
+
+    &[error='true'] {
+      border-color: #e57281;
+
+      & ~ .form-input-label {
+        color: #e57281;
+      }
+    }
+  }
+}

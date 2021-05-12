@@ -1,0 +1,414 @@
+@import '../../main';
+
+@mixin timeline($color) {
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    align-items: flex-start;
+    padding-left: 2rem;
+    text-align: left;
+
+    .timeline-heading {
+      font-size: 1.125rem;
+      font-weight: 500;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 4px;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: $color;
+    }
+
+    & > span {
+      margin-top: 0.5rem;
+      position: relative;
+      font-weight: 300;
+
+      &:first-of-type {
+        margin-top: 1rem;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        height: 12px;
+        width: 12px;
+        border-radius: 50%;
+        top: calc(50% - 6px);
+        left: calc(-2rem - 6px + 2px);
+        background-color: $color;
+      }
+    }
+  }
+}
+
+@mixin timelineContainer() {
+  .timeline-wrapper {
+    width: 50%;
+    align-self: flex-end;
+
+    &.purple {
+      @include timeline($color: #8976ff);
+    }
+
+    &.greenish {
+      @include timeline($color: #6fcf97);
+    }
+
+    &.redish {
+      @include timeline($color: #e57281);
+    }
+
+    &.bluish {
+      @include timeline($color: #2d9cdb);
+    }
+
+    &.yellowish {
+      @include timeline($color: #eba91b);
+    }
+
+    &:not(:first-of-type) {
+      margin-top: 2rem;
+    }
+
+    @media screen and (min-width: 752px) {
+      &:nth-of-type(even) {
+        align-self: flex-start;
+
+        .timeline {
+          align-items: flex-end;
+          padding-left: unset;
+          padding-right: 3rem;
+          text-align: right;
+
+          &::after {
+            left: 100%;
+          }
+
+          & > span::after {
+            left: calc(100% + 3rem - 6px + 2px);
+          }
+        }
+      }
+    }
+
+    @media screen and (max-width: 752px) {
+      width: 100%;
+      padding: 0 0.5rem;
+    }
+  }
+}
+
+//Starting of course styles
+.course {
+  overflow-x: hidden;
+  padding: 0 4vw;
+  scroll-behavior: smooth;
+
+  & > section {
+    display: flex;
+    justify-content: center;
+    margin: 5rem 0;
+    text-align: center;
+  }
+
+  .course-section-first {
+    height: calc(100vh - 5rem);
+    margin: 2rem 0;
+
+    & > div {
+      width: calc(30vh + 30vw);
+      text-align: center;
+      margin-top: calc(5vh + 5vw);
+
+      & > div:first-of-type {
+        @include headerStyle;
+      }
+    }
+  }
+
+  .course-section-second {
+    flex-direction: column;
+    align-items: center;
+
+    & > div:first-of-type {
+      @include headerStyle($subheading: true);
+      text-align: center;
+    }
+
+    & > div:nth-of-type(2) {
+      width: 80%;
+      text-align: center;
+      font-weight: 300;
+    }
+
+    & > div:nth-of-type(3) {
+      font-weight: 500;
+      font-size: 1.2rem;
+      margin-top: 1rem;
+    }
+
+    & > ul {
+      font-size: 0.9rem;
+      font-weight: 300;
+      text-align: center;
+      list-style-type: '👉';
+      margin: 0 0.5rem;
+      padding: unset;
+    }
+  }
+
+  .course-section-third {
+    flex-direction: column;
+    // align-items: center;
+
+    & > span {
+      @include headerStyle($subheading: true);
+      margin-bottom: 2rem;
+    }
+
+    @include timelineContainer;
+  }
+
+  .course-section-fourth {
+    flex-direction: column;
+    align-items: center;
+
+    & > span {
+      @include headerStyle($subheading: true);
+    }
+
+    .instructors {
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+
+      .intructor-card-container {
+        width: 24rem;
+        // min-width: 24rem;
+        background-color: #000;
+        border-radius: 15px;
+        padding: 1rem;
+        margin: 0.5rem;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .intructor-pic {
+          width: 7rem;
+          height: 7rem;
+          border-radius: 50%;
+          overflow: hidden;
+        }
+
+        .instructor-details {
+          margin-left: 1.125rem;
+          width: 60%;
+
+          & > div:first-of-type {
+            font-size: 1.125rem;
+            font-weight: 500;
+            line-height: 1.2rem;
+            text-align: left;
+          }
+
+          & > div:nth-of-type(2) {
+            text-align: right;
+            font-size: 0.9rem;
+          }
+
+          & > div:last-of-type {
+            line-height: 1.2rem;
+            text-align: left;
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+  }
+
+  .course-section-fifth {
+    flex-direction: column;
+    align-items: center;
+
+    & > span {
+      @include headerStyle($subheading: true);
+    }
+  }
+}
+
+@media screen and (max-width: 752px) {
+  .course {
+    & > section {
+      height: unset;
+    }
+
+    .course-section-first {
+      height: unset;
+      margin-bottom: calc(3vh + 3vw);
+    }
+  }
+}
+
+// .course-section-third {
+//   flex-direction: column;
+//   align-items: center;
+//   width: 100%;
+
+//   & > span {
+//     @include headerStyle($subheading: true);
+//     margin-bottom: 2rem;
+//   }
+
+//   @include timelineContainer();
+// }
+
+// @mixin timeline($color) {
+//   .timeline {
+//     display: flex;
+//     flex-direction: column;
+//     width: 100%;
+
+//     & > span {
+//       position: relative;
+//       margin: 0.5rem 0;
+//       // font-size: 1.25rem;
+//       font-weight: 300;
+
+//       &::before {
+//         content: '';
+//         position: absolute;
+//         height: 12px;
+//         width: 12px;
+//         border-radius: 50%;
+//         top: calc(50% - 6px);
+//         background-color: $color;
+//       }
+//     }
+//   }
+// }
+
+// @mixin timelineContainer() {
+//   .timeline-container {
+//     display: flex;
+//     flex-direction: column;
+//     flex-wrap: wrap;
+//     position: relative;
+//     width: 100%;
+
+//     &:not(:first-of-type) {
+//       // margin: 2rem 0;
+//       margin-top: 2rem;
+//     }
+
+//     & > div {
+//       text-align: left;
+
+//       position: relative;
+//       left: calc(50% + 3rem);
+
+//       &:first-of-type {
+//         font-size: 1.125rem;
+//         font-weight: 500;
+//       }
+//     }
+
+//     @media screen and (min-width: 720px) {
+//       &:nth-of-type(even) {
+//         & > div {
+//           text-align: right;
+//           left: unset;
+//           right: calc(50% + 3rem);
+//         }
+
+//         .timeline {
+//           & > span::before {
+//             left: unset;
+//             right: calc(-3rem - 8px);
+//           }
+//         }
+//       }
+//     }
+
+//     .timeline {
+//       & > span::before {
+//         left: calc(-3rem - 3.7px);
+//       }
+//     }
+
+//     &::before {
+//       content: '';
+//       position: absolute;
+//       top: 0.9rem;
+//       left: 50%;
+//       bottom: 0.5rem;
+//       width: 4px;
+//     }
+
+//     @media screen and (max-width: 720px) {
+//       &::before {
+//         left: 1rem;
+//       }
+
+//       & > div {
+//         position: unset;
+//         margin-left: 3rem;
+//         width: 100%;
+//       }
+
+//       .timeline {
+//         & > span::before {
+//           left: calc(-2rem - 3.7px);
+//         }
+//       }
+//     }
+
+//     &.purple {
+//       @include timeline($color: #8976ff);
+
+//       &::before {
+//         background-color: #8976ff;
+//       }
+//     }
+
+//     &.greenish {
+//       @include timeline($color: #6fcf97);
+
+//       &::before {
+//         background-color: #6fcf97;
+//       }
+//     }
+
+//     &.redish {
+//       @include timeline($color: #e57281);
+
+//       &::before {
+//         background-color: #e57281;
+//       }
+//     }
+
+//     &.bluish {
+//       @include timeline($color: #2d9cdb);
+
+//       &::before {
+//         background-color: #2d9cdb;
+//       }
+//     }
+
+//     &.yellowish {
+//       @include timeline($color: #eba91b);
+
+//       &::before {
+//         background-color: #eba91b;
+//       }
+//     }
+//   }
+// }

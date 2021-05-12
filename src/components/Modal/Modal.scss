@@ -1,0 +1,77 @@
+@import '../../main';
+
+.modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 1);
+  z-index: 3;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & > div {
+    width: 36.1vw;
+    height: 48.6vh;
+    min-width: 17rem;
+    max-height: 18.75rem;
+    z-index: 5;
+    background-color: $backgroundColor;
+    border-radius: 24px;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .close-btn {
+      position: absolute;
+      top: 0.3rem;
+      right: 1.5rem;
+      height: 1.2rem;
+      width: 1.2rem;
+
+      & > div {
+        height: 100%;
+        width: 0.1rem;
+        background-color: $primaryColor;
+        transform-origin: 50%;
+        transform: rotate(45deg);
+        z-index: 10;
+        cursor: pointer;
+        position: absolute;
+
+        &:last-of-type {
+          transform: rotate(135deg);
+        }
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    & > span {
+      @include headerStyle;
+      font-size: 1.8rem;
+    }
+
+    & > div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 1rem 0;
+
+      .icon-container {
+        width: 5rem;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.2rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+$backgroundColor: #131313;
+$primaryColor: #f1f1f1;
+$secondaryColor: #8458ff;
+
+@mixin fontStyles {
+  font-family: 'Poppins', sans-serif;
+  color: $primaryColor;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 2rem;
+  letter-spacing: 0.75px;
+  font-feature-settings: 'liga' off;
+}
+
+@mixin headerStyle($subheading: false) {
+  @if $subheading {
+    font-size: clamp(1.6rem, calc(1.7vh + 1.7vw), 2rem);
+    letter-spacing: 0.2rem;
+  } @else {
+    font-size: calc(2.3vh + 2.3vw);
+  }
+  line-height: calc(2.75vh + 2.75vw);
+  margin-bottom: calc(0.8vh + 0.8vw);
+  font-weight: 600;
+}
+
+@mixin buttonStyle {
+  padding: 0.3rem 1rem;
+  @include fontStyles;
+  background-color: $secondaryColor;
+  border-radius: 2.5rem;
+  font-weight: 600;
+  border: none;
+  outline: none;
+}

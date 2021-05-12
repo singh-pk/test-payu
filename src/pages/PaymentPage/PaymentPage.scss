@@ -1,0 +1,74 @@
+.payment-page {
+  display: flex;
+  padding: 0 4vw;
+  height: calc(100vh - 5rem - 6rem);
+  flex-wrap: wrap;
+
+  & > section {
+    & > span {
+      text-transform: uppercase;
+      font-weight: 500;
+      letter-spacing: 0.1875rem;
+    }
+
+    .payment-card {
+      height: 5.6875rem;
+      display: flex;
+      align-items: center;
+
+      & > div:first-of-type {
+        height: 100%;
+        width: 8rem;
+      }
+
+      & > div:last-of-type {
+        margin-left: 1rem;
+      }
+    }
+
+    .refer-error {
+      color: #e57281;
+      text-transform: unset;
+      letter-spacing: unset;
+      font-size: 0.8rem;
+    }
+
+    .payment-price {
+      .old-price {
+        text-decoration: line-through;
+      }
+
+      .updated-price {
+        color: #66b0f0;
+        font-weight: 600;
+      }
+    }
+  }
+
+  & > section:last-of-type {
+    margin-left: 10rem;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .payment-page {
+    flex-direction: column;
+    height: unset;
+
+    & > section:last-of-type {
+      margin-left: unset;
+      padding: 0.8rem;
+      margin-bottom: 1.5rem !important;
+    }
+
+    & > section {
+      margin: 1rem auto !important;
+      border: 3px solid #2f2f2f;
+      border-radius: 25px;
+
+      &:first-of-type {
+        padding: 1rem;
+      }
+    }
+  }
+}

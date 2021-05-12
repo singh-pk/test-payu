@@ -1,0 +1,33 @@
+.spinner-container {
+  height: calc(100vh - 5rem - 6rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4vw;
+
+  .spinner:before {
+    content: '';
+    display: grid;
+    width: 100%;
+    place-items: center;
+    height: 1.2rem;
+    width: 1.2rem;
+    border-radius: 50%;
+    border: 0.2rem solid #a3a1a16c;
+    border-top-color: #8458ff;
+    animation: spinner 0.7s linear infinite;
+  }
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 852px) {
+  .spinner-container {
+    height: calc(100vh - 5rem - 11.9225rem);
+  }
+}

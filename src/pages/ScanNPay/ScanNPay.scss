@@ -1,0 +1,53 @@
+@import '../../main';
+
+.scan-n-pay {
+  padding: 0 4vw;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  & > span {
+    @include headerStyle($subheading: true);
+  }
+
+  .qr-code {
+    height: 15rem;
+    width: 15.625rem;
+    border: 8px solid #353535;
+    border-radius: 25px;
+    background-color: #fff;
+  }
+
+  .pay-course-desc {
+    margin: 0.5rem 0 1rem;
+
+    & > span:first-of-type {
+      font-weight: 600;
+    }
+
+    & > span:last-of-type {
+      color: #6fcf97;
+      font-weight: 600;
+    }
+  }
+
+  .scan-n-pay-details {
+    text-align: center;
+  }
+
+  & > div:last-of-type {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    & > button {
+      margin: 1rem 0;
+
+      &:first-child {
+        margin-right: 1rem;
+      }
+    }
+  }
+}

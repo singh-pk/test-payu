@@ -1,0 +1,33 @@
+@import '../../main';
+
+.confirmation-page {
+  height: calc(100vh - 5rem - 6rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 4vw;
+  text-align: center;
+
+  & > div {
+    &:first-of-type {
+      margin-top: 7vw;
+      height: 3rem;
+    }
+
+    &:nth-of-type(2) {
+      @include headerStyle($subheading: true);
+      margin-top: 0.8rem;
+      margin-bottom: unset;
+    }
+
+    &:last-of-type {
+      margin-top: 0.5rem;
+    }
+  }
+}
+
+@media screen and (max-width: 852px) {
+  .confirmation-page {
+    height: calc(100vh - 5rem - 11.9225rem);
+  }
+}
