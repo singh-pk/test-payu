@@ -21,7 +21,7 @@ export const redirectToPayU = (
   hash
 ) =>
   axios.post(
-    `https://test.payu.in/_payment`,
+    `https://secure.payu.in`,
     {
       key: 'SRRiLT',
       txnid: txnid,
@@ -40,6 +40,7 @@ export const redirectToPayU = (
       headers: {
         accept: 'application/json',
         'Content-Type': 'application/x-www-form-urlencoded',
+        // 'Access-Control-Allow-Origin':
       },
     }
   );
